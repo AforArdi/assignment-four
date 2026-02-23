@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- daisy & tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <title>Job Tracker</title>
+    <style>
+        *{
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header class="w-[80%] mx-auto mt-14 grid gap-5">
+        <h2 class="text-[32px] font-bold text-[#002C5C]">Job Application Tracker</h2>
+        <div class="grid lg:grid-cols-3 md:grid-cols-1 gap-4">
+            <div class="gap-2 bg-base-200 rounded-md px-6 py-3">
+                <p class="text-[14px] text-[#323B49] font-medium">Total</p>
+                <p class="text-24px text-[#002C5C] font-bold" id="total">0</p>
+            </div>
+            
+            <div class="gap-2 bg-base-200 rounded-md px-6 py-3">
+                <p class="text-[14px] text-[#323B49] font-medium">Interview</p>
+                <p class="text-24px text-[#10B981] font-bold" id="interview">0</p>
+            </div>
+
+            <div class="gap-2 bg-base-200 rounded-md px-6 py-3">
+                <p class="text-[14px] text-[#323B49] font-medium">Rejected</p>
+                <p class="text-24px text-[#EF4444] font-bold" id="rejected">0</p>
+            </div>
+        </div>
+    </header>
+
+    <hr class="my-7 w-[80%] mx-auto">
+
+    <main>
+        <section class="w-[80%] mx-auto">
+            <h2 class="text-[20px] text-[#002C5C] font-semibold">Available Jobs</h2>
+            <div class="flex gap-2 my-6">
+                <button class="btn btn-primary" id="btn-all">All</button>
+                <button class="btn" id="btn-interview">Interview</button>
+                <button class="btn" id="btn-rejected">Rejected</button>
+            </div>
+        </section>
+
+        <section id="allJobs">
+            <!-- card 1 -->
+             <div>
+                <div></div>
+                <div></div>
+             </div>
+        </section>
+    </main>
+</body>
+</html>
