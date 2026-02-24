@@ -16,18 +16,49 @@ function clickStyle(id){
 
     currentStatus = id;
 
+    // hiding default first
+    // interviewDefault.classList.add('hidden');
+    // rejectedDefault.classList.add('hidden');
+    // if (id === 'btn-interview'){
+    //     interviewDefault.classList.remove('hidden');
+    // }else if (){
+    //     rejectedDefault.classList.remove('hidden');
+    // }
+
+
     // only showing the selected job card
-    if (id === 'btn-interview') {
-        allJobsSection.classList.add('hidden');
-        filteredJobsSection.classList.remove('hidden');
-        renderInterview();
-    } else if (id === 'btn-all') {
+
+    // hide both defaults first
+    interviewDefault.classList.add('hidden');
+    rejectedDefault.classList.add('hidden');
+
+    if (id === 'btn-all') {
         allJobsSection.classList.remove('hidden');
         filteredJobsSection.classList.add('hidden');
-    } else if (id === 'btn-rejected'){
+    }
+    else if (id === 'btn-interview') {
         allJobsSection.classList.add('hidden');
+
+        if (interviewList.length === 0) {
+        filteredJobsSection.classList.add('hidden');
+        interviewDefault.classList.remove('hidden');
+        } else {
+        interviewDefault.classList.add('hidden');
+        filteredJobsSection.classList.remove('hidden');
+        renderInterview();
+        }
+    }
+    else if (id === 'btn-rejected') {
+        allJobsSection.classList.add('hidden');
+
+        if (rejectedList.length === 0) {
+        filteredJobsSection.classList.add('hidden');
+        rejectedDefault.classList.remove('hidden');
+        } else {
+        rejectedDefault.classList.add('hidden');
         filteredJobsSection.classList.remove('hidden');
         renderRejected();
+        }
     }
 }
 

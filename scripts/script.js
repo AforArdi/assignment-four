@@ -3,6 +3,8 @@ let totalJob = document.getElementById('total-dashboard');
 let totalInterview = document.getElementById('interview');
 let totalRejected = document.getElementById('rejected');
 
+const interviewDefault = document.getElementById('interview-default');
+const rejectedDefault = document.getElementById('rejected-default');
 
 const allJobsSection = document.getElementById('allJobs');
 const mainContainer = document.querySelector('main');
@@ -17,7 +19,7 @@ let interviewList = [];
 let rejectedList = [];
 
 // to check where exactly the user is toggling
-let currentStatus = 'all';
+let currentStatus = 'btn-all';
 
 
 calculateCount();
@@ -64,6 +66,7 @@ mainContainer.addEventListener('click', function(e){
         
         // update count
         calculateCount();
+        clickStyle(currentStatus);
 
         // console.log(interviewList);
     }
@@ -106,10 +109,11 @@ mainContainer.addEventListener('click', function(e){
         
         // update count
         calculateCount();
+        clickStyle(currentStatus);
 
         // console.log(interviewList);
     }else if (e.target.classList.contains('btn-delete')){
-        
+
     }
 
 })
