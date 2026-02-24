@@ -69,8 +69,7 @@ mainContainer.addEventListener('click', function(e){
         clickStyle(currentStatus);
 
         // console.log(interviewList);
-    }
-    else if (e.target.classList.contains('btn-rejected-stat')){
+    }else if (e.target.classList.contains('btn-rejected-stat')){
         const parentNode = e.target.parentNode.parentNode;
 
         const companyName = parentNode.querySelector('.company-name').innerText;
@@ -113,7 +112,29 @@ mainContainer.addEventListener('click', function(e){
 
         // console.log(interviewList);
     }else if (e.target.classList.contains('btn-delete')){
+        const parentNode = e.target.parentNode.parentNode;
+        const companyName = parentNode.querySelector('.company-name').innerText;
 
+        // for ALL tab remove from main section
+        if (currentStatus === 'btn-all') {
+            parentNode.remove();
+
+            // also remove from interview and rejected also
+            interviewList = interviewList.filter(item => item.companyName != companyName);
+            rejectedList = rejectedList.filter(item => item.companyName != companyName);
+        }
+
+        else if (currentStatus === 'btn-interview') {
+            interviewList = interviewList.filter(item => item.companyName != companyName);
+        }
+
+        else if (currentStatus === 'btn-rejected') {
+            rejectedList = rejectedList.filter(item => item.companyName != companyName);
+        }
+
+        // updating count
+        calculateCount();
+        clickStyle(currentStatus);
     }
 
 })

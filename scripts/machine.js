@@ -92,7 +92,7 @@ function renderInterview(){
                 </div>
                 <!-- delete part -->
                 <div>
-                    <button class="btn"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
         `
         filteredJobsSection.appendChild(div);
@@ -129,7 +129,7 @@ function renderRejected(){
                 </div>
                 <!-- delete part -->
                 <div>
-                    <button class="btn"><i class="fa-solid fa-trash-can"></i></button>
+                    <button class="btn btn-delete"><i class="fa-solid fa-trash-can"></i></button>
                 </div>
         `
         filteredJobsSection.appendChild(div);
