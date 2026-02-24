@@ -13,10 +13,17 @@ function clickStyle(id){
 
     const selectedBtn = document.getElementById(id);
     selectedBtn.classList.add('btn-primary');
+
+    // only showing the selected job card
+    // if (id == 'interviewFilterBtn'){
+    //     allJobsSection.classList.add('hidden');
+    //     filteredJobsSection.classList.remove('hidden');
+    // }
 }
 
 function renderInterview(){
     filteredJobsSection.innerHTML = '';
+
     for (let interview of interviewList){
         let div = document.createElement('div');
         div.callName = 'flex justify-between border p-6 rounded-md';
@@ -49,5 +56,6 @@ function renderInterview(){
                 </div>
              </div>
         `
+        filteredJobsSection.appendChild(div);
     }
 }
