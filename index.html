@@ -53,10 +53,15 @@
                 <p><span id="total-title">0</span> Jobs</p>
             </div>
             <div class="flex gap-2 my-6">
-                <button class="btn btn-primary" id="btn-all">All</button>
-                <button class="btn" id="btn-interview">Interview</button>
-                <button class="btn" id="btn-rejected">Rejected</button>
+                <button onclick="clickStyle('btn-all')" class="btn btn-primary" id="btn-all">All</button>
+                <button onclick="clickStyle('btn-interview')" class="btn" id="btn-interview">Interview</button>
+                <button onclick="clickStyle('btn-rejected')" class="btn" id="btn-rejected">Rejected</button>
             </div>
+        </section>
+
+        <!-- filtered job cards -->
+        <section id="filtered-jobs">
+
         </section>
 
         <section id="allJobs" class="w-[80%] mx-auto space-y-4">
@@ -66,8 +71,8 @@
                 <div class="space-y-4">
                     <!-- part 1 -->
                     <div class="flex flex-col gap-2">
-                        <p>Mobile First Corp</p>
-                        <p>React Native Developer</p>
+                        <p class="company-name">Mobile First Corp</p>
+                        <p class="job-position">React Native Developer</p>
                     </div>
                     <p>Remote &bull; Full-time &bull; $130,000 - $175,000</p>
                     <div class="flex flex-col gap-2">
@@ -92,8 +97,8 @@
                 <div class="space-y-4">
                     <!-- part 1 -->
                     <div class="flex flex-col gap-2">
-                        <p>Mobile First Corp</p>
-                        <p>React Native Developer</p>
+                        <p class="company-name">Mobile First Corp</p>
+                        <p class="job-position">React Native Developer</p>
                     </div>
                     <p>Remote &bull; Full-time &bull; $130,000 - $175,000</p>
                     <div class="flex flex-col gap-2">
