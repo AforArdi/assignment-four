@@ -3,6 +3,14 @@ function calculateCount(){
     totalJob.innerText = allJobsSection.children.length;
     totalInterview.innerText = interviewList.length;
     totalRejected.innerText = rejectedList.length;
+
+    if (currentStatus === 'btn-all') {
+        currentTabTotal.innerText = allJobsSection.children.length;
+    } else if (currentStatus === 'btn-interview') {
+        currentTabTotal.innerText = interviewList.length;
+    } else if (currentStatus === 'btn-rejected') {
+        currentTabTotal.innerText = rejectedList.length;
+    }
 }
 
 // btn toggling color change function
@@ -24,8 +32,6 @@ function clickStyle(id){
     // }else if (){
     //     rejectedDefault.classList.remove('hidden');
     // }
-
-
     // only showing the selected job card
 
     // hide both defaults first
@@ -60,6 +66,7 @@ function clickStyle(id){
         renderRejected();
         }
     }
+    calculateCount();
 }
 
 // interview cards
