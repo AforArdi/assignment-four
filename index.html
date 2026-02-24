@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- font awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- google font -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,17 +27,17 @@
     <header class="w-[80%] mx-auto mt-14 grid gap-5">
         <h2 class="text-[32px] font-bold text-[#002C5C]">Job Application Tracker</h2>
         <div class="grid lg:grid-cols-3 md:grid-cols-1 gap-4">
-            <div class="gap-2 bg-base-200 rounded-md px-6 py-3">
+            <div class="gap-2 bg-base-300 rounded-md px-6 py-3">
                 <p class="text-[14px] text-[#323B49] font-medium">Total</p>
-                <p class="text-24px text-[#002C5C] font-bold" id="total">0</p>
+                <p class="text-24px text-[#002C5C] font-bold" id="total-dashboard">0</p>
             </div>
             
-            <div class="gap-2 bg-base-200 rounded-md px-6 py-3">
+            <div class="gap-2 bg-base-300 rounded-md px-6 py-3">
                 <p class="text-[14px] text-[#323B49] font-medium">Interview</p>
                 <p class="text-24px text-[#10B981] font-bold" id="interview">0</p>
             </div>
 
-            <div class="gap-2 bg-base-200 rounded-md px-6 py-3">
+            <div class="gap-2 bg-base-300 rounded-md px-6 py-3">
                 <p class="text-[14px] text-[#323B49] font-medium">Rejected</p>
                 <p class="text-24px text-[#EF4444] font-bold" id="rejected">0</p>
             </div>
@@ -45,7 +48,10 @@
 
     <main>
         <section class="w-[80%] mx-auto">
-            <h2 class="text-[20px] text-[#002C5C] font-semibold">Available Jobs</h2>
+            <div class="flex justify-between">
+                <h2 class="text-[20px] text-[#002C5C] font-semibold">Available Jobs</h2>
+                <p><span id="total-title">0</span> Jobs</p>
+            </div>
             <div class="flex gap-2 my-6">
                 <button class="btn btn-primary" id="btn-all">All</button>
                 <button class="btn" id="btn-interview">Interview</button>
@@ -53,13 +59,63 @@
             </div>
         </section>
 
-        <section id="allJobs">
+        <section id="allJobs" class="w-[80%] mx-auto space-y-4">
             <!-- card 1 -->
-             <div>
-                <div></div>
-                <div></div>
+             <div class="flex justify-between border p-6 rounded-md">
+                <!-- main part -->
+                <div class="space-y-4">
+                    <!-- part 1 -->
+                    <div class="flex flex-col gap-2">
+                        <p>Mobile First Corp</p>
+                        <p>React Native Developer</p>
+                    </div>
+                    <p>Remote &bull; Full-time &bull; $130,000 - $175,000</p>
+                    <div class="flex flex-col gap-2">
+                        <p class="applied-status">Not Applied</p>
+                        <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <!-- part 2 -->
+                     <div class="flex gap-2">
+                        <button class="btn btn-interview-stat">INTERVIEW</button>
+                        <button class="btn btn-rejected-stat">REJECTED</button>
+                     </div>
+                </div>
+                <!-- delete part -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+             </div>
+
+             <!-- card 2 -->
+             <div class="flex justify-between border p-6 rounded-md">
+                <!-- main part -->
+                <div class="space-y-4">
+                    <!-- part 1 -->
+                    <div class="flex flex-col gap-2">
+                        <p>Mobile First Corp</p>
+                        <p>React Native Developer</p>
+                    </div>
+                    <p>Remote &bull; Full-time &bull; $130,000 - $175,000</p>
+                    <div class="flex flex-col gap-2">
+                        <p class="applied-status">Not Applied</p>
+                        <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                    </div>
+                    <!-- part 2 -->
+                     <div class="flex gap-2">
+                        <button class="btn btn-interview-stat">INTERVIEW</button>
+                        <button class="btn btn-rejected-stat">REJECTED</button>
+                     </div>
+                </div>
+                <!-- delete part -->
+                <div>
+                    <button class="btn"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
              </div>
         </section>
     </main>
+
+    <!-- js angta -->
+     <script src="./scripts/machine.js"></script>
+     <script src="./scripts/script.js"></script>
 </body>
 </html>
