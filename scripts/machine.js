@@ -81,7 +81,7 @@ function renderInterview(){
                     </div>
                     <p class="job-offers">${interview.jobOffers}</p>
                     <div class="flex flex-col gap-2">
-                        <p class="applied-status">${interview.status}</p>
+                        <p class="applied-status text-center px-3 py-1 w-[120px] h-8 rounded-md bg-base-300">${interview.status}</p>
                         <p class="job-info-para">${interview.jobInfoPara}</p>
                     </div>
                     <!-- part 2 -->
@@ -118,7 +118,7 @@ function renderRejected(){
                     </div>
                     <p class="job-offers">${reject.jobOffers}</p>
                     <div class="flex flex-col gap-2">
-                        <p class="applied-status">${reject.status}</p>
+                        <p class="applied-status text-center px-3 py-1 w-[120px] h-8 rounded-md bg-base-300">${reject.status}</p>
                         <p class="job-info-para">${reject.jobInfoPara}</p>
                     </div>
                     <!-- part 2 -->
