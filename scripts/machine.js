@@ -26,7 +26,7 @@ function renderInterview(){
 
     for (let interview of interviewList){
         let div = document.createElement('div');
-        div.callName = 'flex justify-between border p-6 rounded-md';
+        div.className = 'flex justify-between border p-6 rounded-md';
         // div.classList.add('flex', 'justify-between', 'border', 'p-6', 'rounded-md');
 
         div.innerHTML = `
