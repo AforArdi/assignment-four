@@ -3,6 +3,8 @@ let totalJob = document.getElementById('total-dashboard');
 let totalInterview = document.getElementById('interview');
 let totalRejected = document.getElementById('rejected');
 
+let currentTabTotal = document.getElementById('current-tab-total');
+
 const interviewDefault = document.getElementById('interview-default');
 const rejectedDefault = document.getElementById('rejected-default');
 
@@ -13,6 +15,7 @@ const filteredJobsSection = document.getElementById('filtered-jobs');
 const allFilterBtn = document.getElementById('btn-all');
 const interviewFilterBtn = document.getElementById('btn-interview');
 const rejectedFilterBtn = document.getElementById('btn-rejected');
+
 
 // empty array for other toggle
 let interviewList = [];
@@ -115,11 +118,11 @@ mainContainer.addEventListener('click', function(e){
         const parentNode = e.target.parentNode.parentNode;
         const companyName = parentNode.querySelector('.company-name').innerText;
 
-        // for ALL tab remove from main section
+        // for all tab remove from main section
         if (currentStatus === 'btn-all') {
             parentNode.remove();
 
-            // also remove from interview and rejected also
+            // also removing from interview and rejected
             interviewList = interviewList.filter(item => item.companyName != companyName);
             rejectedList = rejectedList.filter(item => item.companyName != companyName);
         }
