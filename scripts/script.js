@@ -108,6 +108,8 @@ mainContainer.addEventListener('click', function(e){
         calculateCount();
 
         // console.log(interviewList);
+    }else if (e.target.classList.contains('btn-delete')){
+        
     }
 
 })
