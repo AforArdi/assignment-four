@@ -76,7 +76,7 @@ function renderInterview(){
                 <div class="space-y-4">
                     <!-- part 1 -->
                     <div class="flex flex-col gap-2">
-                        <p class="company-name">${interview.companyName}</p>
+                        <p class="company-name text-[#002C5C] font-bold text-[18px]">${interview.companyName}</p>
                         <p class="job-position">${interview.jobName}</p>
                     </div>
                     <p class="job-offers">${interview.jobOffers}</p>
@@ -86,8 +86,8 @@ function renderInterview(){
                     </div>
                     <!-- part 2 -->
                      <div class="flex gap-2">
-                        <button class="btn btn-interview-stat">INTERVIEW</button>
-                        <button class="btn btn-rejected-stat">REJECTED</button>
+                        <button class="btn btn-interview-stat font-bold text-[#10B981] border-[#10B981]">INTERVIEW</button>
+                        <button class="btn btn-rejected-stat font-bold text-[#EF4444] border-[#EF4444]">REJECTED</button>
                      </div>
                 </div>
                 <!-- delete part -->
@@ -113,7 +113,7 @@ function renderRejected(){
                 <div class="space-y-4">
                     <!-- part 1 -->
                     <div class="flex flex-col gap-2">
-                        <p class="company-name">${reject.companyName}</p>
+                        <p class="company-name text-[#002C5C] font-bold text-[18px]">${reject.companyName}</p>
                         <p class="job-position">${reject.jobName}</p>
                     </div>
                     <p class="job-offers">${reject.jobOffers}</p>
@@ -123,8 +123,8 @@ function renderRejected(){
                     </div>
                     <!-- part 2 -->
                      <div class="flex gap-2">
-                        <button class="btn btn-interview-stat">INTERVIEW</button>
-                        <button class="btn btn-rejected-stat">REJECTED</button>
+                        <button class="btn btn-interview-stat font-bold text-[#10B981] border-[#10B981]">INTERVIEW</button>
+                        <button class="btn btn-rejected-stat font-bold text-[#EF4444] border-[#EF4444]">REJECTED</button>
                      </div>
                 </div>
                 <!-- delete part -->
