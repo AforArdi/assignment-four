@@ -16,6 +16,10 @@ const rejectedFilterBtn = document.getElementById('btn-rejected');
 let interviewList = [];
 let rejectedList = [];
 
+// to check where exactly the user is toggling
+let currentStatus = 'all';
+
+
 calculateCount();
 
 
@@ -24,11 +28,13 @@ mainContainer.addEventListener('click', function(e){
     if (e.target.classList.contains('btn-interview-stat')){
         const parentNode = e.target.parentNode.parentNode;
 
-        const companyName = parentNode.querySelector('.company-name').textContent;
-        const jobName = parentNode.querySelector('.job-position').textContent;
-        const jobOffers = parentNode.querySelector('.job-offers').textContent;
-        const status = parentNode.querySelector('.applied-status').textContent;
-        const jobInfoPara = parentNode.querySelector('.job-info-para').textContent;
+        const companyName = parentNode.querySelector('.company-name').innerText;
+        const jobName = parentNode.querySelector('.job-position').innerText;
+
+        const jobOffers = parentNode.querySelector('.job-offers').innerText;
+        
+        // const status = parentNode.querySelector('.applied-status').innerText;
+        const jobInfoPara = parentNode.querySelector('.job-info-para').innerText;
 
         // status
         parentNode.querySelector('.applied-status').innerText = 'Applied';
@@ -41,6 +47,8 @@ mainContainer.addEventListener('click', function(e){
             jobInfoPara
         }
         
+        rejectedList = rejectedList.filter(item => item.companyName != JobCardInfo.companyName)
+
         // checking if item exists in the array ir not
         const companyExists = interviewList.find(item => item.companyName == JobCardInfo.companyName);
         
@@ -48,11 +56,58 @@ mainContainer.addEventListener('click', function(e){
             interviewList.push(JobCardInfo);
         }
         
+        if (currentStatus === 'btn-interview') {
+            renderInterview();
+        }else if (currentStatus === 'btn-rejected') {
+            renderRejected();
+        }
+        
         // update count
         calculateCount();
 
         // console.log(interviewList);
-        renderInterview()
+    }
+    else if (e.target.classList.contains('btn-rejected-stat')){
+        const parentNode = e.target.parentNode.parentNode;
+
+        const companyName = parentNode.querySelector('.company-name').innerText;
+        const jobName = parentNode.querySelector('.job-position').innerText;
+
+        const jobOffers = parentNode.querySelector('.job-offers').innerText;
+        
+        // const status = parentNode.querySelector('.applied-status').innerText;
+        const jobInfoPara = parentNode.querySelector('.job-info-para').innerText;
+
+        // status
+        parentNode.querySelector('.applied-status').innerText = 'Rejected';
+
+        const JobCardInfo = {
+            companyName,
+            jobName,
+            jobOffers,
+            status: 'Rejected',
+            jobInfoPara
+        }
+
+        interviewList = interviewList.filter(item => item.companyName != JobCardInfo.companyName)
+        
+        // checking if item exists in the array ir not
+        const companyExists = rejectedList.find(item => item.companyName == JobCardInfo.companyName);
+        
+        if(!companyExists){
+            rejectedList.push(JobCardInfo);
+        }
+
+        if (currentStatus === 'btn-interview') {
+            renderInterview();
+        } else if (currentStatus === 'btn-rejected') {
+            renderRejected();
+        }
+        
+        // update count
+        calculateCount();
+
+        // console.log(interviewList);
     }
 
 })
